@@ -86,6 +86,8 @@ namespace AngularCore
                 app.UseHsts();
             }
 
+            app.UseCors(builder => builder.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod());
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseAuthentication();

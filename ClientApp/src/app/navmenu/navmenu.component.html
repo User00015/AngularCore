@@ -1,0 +1,13 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
+  <a class="navbar-brand" href="#">Angular</a>
+  <button class="navbar-toggler hidden-sm-up" type="button" (click)="isCollapsed = !isCollapsed" data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div [ngbCollapse]="isCollapsed" class="collapse navbar-collapse" id="navbarsDefault">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="#">Test 1</a>
+      <a class="nav-item nav-link" href="#">Test 2</a>
+    </div>
+  </div>
+</nav>

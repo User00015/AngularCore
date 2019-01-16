@@ -1,0 +1,9 @@
+<p>
+  test works!
+</p>
+
+<div *ngFor="let item of foo | async">
+  Date: {{item.dateFormatted}}
+  Degrees: {{item.temperatureF}}
+  Summary: {{item.summary}}
+</div>

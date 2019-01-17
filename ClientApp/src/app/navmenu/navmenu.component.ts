@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navmenu.component.scss']
 })
 export class NavmenuComponent implements OnInit {
-  public isCollapsed = false;
+  public isCollapsed = true;
   constructor() { }
 
   ngOnInit() {

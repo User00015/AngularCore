@@ -1,15 +1,24 @@
-<div class="header">
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="#">Angular</a>
-    <button class="navbar-toggler hidden-sm-up" type="button" (click)="isCollapsed = !isCollapsed" data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div [ngbCollapse]="isCollapsed" class="collapse navbar-collapse" id="navbarsDefault">
-      <div class="navbar-nav">
-        <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-        <!--<a class="nav-item nav-link" href="#">Test 1</a>-->
-        <!--<a class="nav-item nav-link" href="#">Test 2</a>-->
-      </div>
-    </div>
-  </nav>
-</div>
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark elegant-color scrolling-navbar sticky-top" [containerInside]="false">
+
+  <!-- Navbar brand -->
+  <mdb-navbar-brand><a class="navbar-brand" href="#">AngularCore</a></mdb-navbar-brand>
+
+  <!-- Collapsible content -->
+  <links>
+
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item" mdbWavesEffect routerLinkActive="active">
+          <a class="nav-link" routerLink="/home">Home </a>
+        </li>
+        <li class="nav-item" mdbWavesEffect routerLinkActive="active">
+          <a class="nav-link" routerLink="/test">Test </a>
+        </li>
+    </ul>
+    <!-- Links -->
+  </links>
+  <!-- Collapsible content -->
+
+</mdb-navbar>
+<!--/.Navbar-->

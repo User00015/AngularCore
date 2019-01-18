@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using AngularCore.Entities;
 using AngularCore.Extensions;
 using AngularCore.Services;
+using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -34,6 +35,9 @@ namespace AngularCore
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+            services.AddCors();
+            services.AddAutoMapper();
 
             var key = Encoding.ASCII.GetBytes("SecretValueGoesHere"); //TODO - Seret Value 
             services.AddAuthentication(x =>

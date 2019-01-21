@@ -1,24 +1,27 @@
 <!--Navbar-->
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark elegant-color scrolling-navbar sticky-top" [containerInside]="false">
+<div class="nav-header">
+  <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark elegant-color scrolling-navbar fixed-top" [containerInside]="false">
 
-  <!-- Navbar brand -->
-  <mdb-navbar-brand><a class="navbar-brand" href="#">AngularCore</a></mdb-navbar-brand>
+    <!-- Navbar brand -->
+    <mdb-navbar-brand><a class="navbar-brand" href="#">AngularCore</a></mdb-navbar-brand>
 
-  <!-- Collapsible content -->
-  <links>
+    <!-- Collapsible content -->
+    <links>
 
-    <!-- Links -->
-    <ul class="navbar-nav mr-auto">
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
         <li class="nav-item" mdbWavesEffect routerLinkActive="active">
           <a class="nav-link" routerLink="/home">Home </a>
         </li>
         <li class="nav-item" mdbWavesEffect routerLinkActive="active">
           <a class="nav-link" routerLink="/test">Test </a>
         </li>
-    </ul>
-    <!-- Links -->
-  </links>
-  <!-- Collapsible content -->
+      </ul>
+      <!-- Links -->
+    </links>
+    <!-- Collapsible content -->
 
-</mdb-navbar>
-<!--/.Navbar-->
+  </mdb-navbar>
+  <!--/.Navbar-->
+
+</div>

@@ -8,6 +8,8 @@ import { NavmenuComponent } from './navmenu/navmenu.component';
 import { HomeComponent } from './home/home.component';
 import { ErrorComponent } from './error/error.component';
 import { MDBBootstrapModule } from "angular-bootstrap-md";
+import { ArtCardDirective } from "./directives/art-card.directive";
+import { ArtCardComponent } from './art-card/art-card.component';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { MDBBootstrapModule } from "angular-bootstrap-md";
     TestComponent,
     NavmenuComponent,
     HomeComponent,
-    ErrorComponent
+    ErrorComponent,
+    ArtCardDirective,
+    ArtCardComponent
   ],
   imports: [
     BrowserModule,

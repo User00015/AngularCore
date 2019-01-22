@@ -1,27 +1,9 @@
 <div class="container-fluid">
-  <mdb-card class="text-center">
-    <mdb-card-body>
-
-      <!--Card image-->
-      <div class="row">
-        <div class="col" *ngFor="let i of images">
-          <img [src]="i.img" class="img-fluid z-zepth-1"/>
-
-        </div>
-      </div>
-      <!--/Card image-->
-
-      <mdb-card-title>
-        <h4>Title</h4>
-      </mdb-card-title>
-      <mdb-card-text>
-        Text
-      </mdb-card-text>
-    </mdb-card-body>
-  </mdb-card>
+  <div class="row">
+    <div class="col-md-6 col-lg-4 col-xl-3 mb-4" *ngFor="let i of images">
+     <app-art-card [artUri]="i.img"></app-art-card>
+    </div>
+  </div>
 </div>
 
 
-<!--<div *ngFor="let img of images">
-  <img [src]="img.img" class="card-img-top" />
-</div>-->

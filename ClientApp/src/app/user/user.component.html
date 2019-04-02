@@ -4,7 +4,7 @@
     <div class="d-flex align-items-start scale-images">
       <div *ngFor="let image of user.images" class="overlay view mr-2">
         <img [src]="image" class="img  z-depth-1" />
-        <a><div class="mask  waves-effect rgba-fade"></div></a>
+        <a><div class="mask  waves-effect rgba-fade " (click)="onClick(user)"></div></a>
       </div>
     </div>
   </div>

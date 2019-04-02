@@ -11,6 +11,7 @@ import { MDBBootstrapModule } from "angular-bootstrap-md";
 import { UserComponent } from './user/user.component';
 import { environment } from '../environments/environment';
 import { UsersListComponent } from './users-list/users-list.component';
+import { NewAdditionsComponent } from './new-additions/new-additions.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { UsersListComponent } from './users-list/users-list.component';
     HomeComponent,
     ErrorComponent,
     UserComponent,
-    UsersListComponent
+    UsersListComponent,
+    NewAdditionsComponent
   ],
   imports: [
     BrowserModule,

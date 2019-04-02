@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { User } from "../models/user";
 
 @Component({
   selector: 'app-user',
@@ -13,6 +14,10 @@ export class UserComponent implements OnInit {
   ngOnInit() {
   }
 
-  @Input() user: string;
+  onClick(user: User) {
+    console.log(user);
+  }
+
+  @Input() user: User;
 
 }

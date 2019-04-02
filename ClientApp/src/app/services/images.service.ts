@@ -50,9 +50,7 @@ export class ImagesService {
     }
   ];
 
-  getNewAdditions(page: number): Observable<{img: string, thumb: string, description: string}[]> {
-    this.images$.next(this.images);
-    return this.images$.asObservable();
-    //return this.images$.asObservable();
+  getNewAdditions(): Observable<{img: string, thumb: string, description: string}[]> {
+    return of(this.images);
   }
 }

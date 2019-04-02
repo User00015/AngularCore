@@ -16,7 +16,7 @@ export class NewAdditionsComponent implements OnInit {
   constructor(private imageService: ImagesService) { }
 
   ngOnInit() {
-    this.images$ = this.imageService.getNewAdditions(0);
+    this.images$ = this.imageService.getNewAdditions();
 
   }
 

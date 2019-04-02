@@ -8,6 +8,9 @@ import { NavmenuComponent } from './navmenu/navmenu.component';
 import { HomeComponent } from './home/home.component';
 import { ErrorComponent } from './error/error.component';
 import { MDBBootstrapModule } from "angular-bootstrap-md";
+import { UserComponent } from './user/user.component';
+import { environment } from '../environments/environment';
+import { UsersListComponent } from './users-list/users-list.component';
 
 
 @NgModule({
@@ -16,7 +19,9 @@ import { MDBBootstrapModule } from "angular-bootstrap-md";
     TestComponent,
     NavmenuComponent,
     HomeComponent,
-    ErrorComponent
+    ErrorComponent,
+    UserComponent,
+    UsersListComponent
   ],
   imports: [
     BrowserModule,

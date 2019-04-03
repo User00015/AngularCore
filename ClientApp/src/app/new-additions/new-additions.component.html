@@ -1,7 +1,6 @@
-<div class="d-flex align-items-start">
-  <div *ngFor="let i of images$ | async" class="overlay view mr-2">
-    <img [src]="i.img" class="img z-depth-1" />
-    <a><div class="mask waves-effect rgba-fade"></div></a>
+  <div class="d-flex justify-content-start flex-wrap">
+    <div *ngFor="let i of images$ | async" class="overlay view m-2 mb-3 p-0 z-depth-2">
+      <img [src]="i.img" class="img-fluid " />
+      <a><div class="mask waves-effect rgba-fade"></div></a>
+    </div>
   </div>
-</div>
-

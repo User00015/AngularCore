@@ -2,7 +2,11 @@
   background-color: rgba(62, 69, 81, 0.40)
 }
 
+.scale-images {
+}
+
 img {
-  max-height:40em;
-  object-fit:cover;
+  object-fit: cover;
+  max-height:18em;
+  max-width: 18em;
 }

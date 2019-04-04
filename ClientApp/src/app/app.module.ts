@@ -12,6 +12,7 @@ import { UserComponent } from './user/user.component';
 import { environment } from '../environments/environment';
 import { UsersListComponent } from './users-list/users-list.component';
 import { NewAdditionsComponent } from './new-additions/new-additions.component';
+import { RouterLinksComponent } from './router-links/router-links.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { NewAdditionsComponent } from './new-additions/new-additions.component';
     ErrorComponent,
     UserComponent,
     UsersListComponent,
-    NewAdditionsComponent
+    NewAdditionsComponent,
+    RouterLinksComponent
   ],
   imports: [
     BrowserModule,

@@ -9,6 +9,7 @@ export class NavmenuComponent implements OnInit {
   public isCollapsed = true;
   constructor() { }
 
+
   ngOnInit() {
   }
 

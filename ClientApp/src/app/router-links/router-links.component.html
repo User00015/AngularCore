@@ -1,0 +1,6 @@
+<ul class="navbar-nav mr-auto">
+  <li class="nav-item" mdbWavesEffect routerLinkActive="active" *ngFor="let l of links">
+    <a class="nav-link" routerLink="/{{l | lowercase}}">{{l}} </a>
+  </li>
+
+</ul>

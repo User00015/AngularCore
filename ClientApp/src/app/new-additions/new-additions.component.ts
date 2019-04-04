@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ImagesService } from "../services/images.service";
-import { Observable } from "rxjs";
+import { BehaviorSubject } from "rxjs";
 import { tap, map } from "rxjs/operators";
 
 
@@ -10,7 +10,7 @@ import { tap, map } from "rxjs/operators";
   styleUrls: ['./new-additions.component.scss']
 })
 export class NewAdditionsComponent implements OnInit {
-  images$: Observable<{img: string, thumb: string, description: string}[]>;
+  images$: BehaviorSubject <{img: string, thumb: string, description: string}[]>;
   images: any;
 
   constructor(private imageService: ImagesService) { }

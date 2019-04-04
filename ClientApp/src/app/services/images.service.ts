@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of, Subject } from 'rxjs';
+import { Observable, of, Subject, BehaviorSubject, ReplaySubject } from 'rxjs';
 import { map } from "rxjs/operators";
 
 @Injectable({
@@ -9,7 +9,6 @@ export class ImagesService {
 
   constructor() { }
 
-  private images$ = new Subject<{img: string, thumb: string, description: string}[]>();
 
   private images = [
     {
@@ -50,7 +49,11 @@ export class ImagesService {
     }
   ];
 
-  getNewAdditions(): Observable<{img: string, thumb: string, description: string}[]> {
-    return of(this.images);
+  private images$ = new BehaviorSubject<{img: string, thumb: string, description: string}[]>(this.images);
+
+  getNewAdditions(): BehaviorSubject<{img: string, thumb: string, description: string}[]> {
+    //return of(this.images);
+    return this.images$;
+    //return (from(this.images).pipe(concatMap(i => of(i).pipe(delay(1000)))));
   }
 }

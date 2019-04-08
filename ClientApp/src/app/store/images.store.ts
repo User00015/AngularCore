@@ -1,26 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { ImagesService } from "../services/images.service";
-import { BehaviorSubject, Observable } from "rxjs";
-import { tap, map } from "rxjs/operators";
+import { Store } from "./store";
+import { Injectable } from '@angular/core';
 
+@Injectable()
+export class ImageStore extends Store<ImageState> {
 
-@Component({
-  selector: 'app-new-additions',
-  templateUrl: './new-additions.component.html',
-  styleUrls: ['./new-additions.component.scss']
-})
-export class NewAdditionsComponent implements OnInit {
-  images$: Observable<string>;
-
-  constructor(private imageService: ImagesService) { }
-
-  addImage() {
-    var randomInt = this.getRandomInt(0, 9);
-    this.imageService.addImage(this.images[randomInt].img);
+  constructor() {
+    super(new ImageState());
+    this.images.forEach(t => this.addImage(t.img)); //Pretend we retrieved existing images.
   }
 
-  ngOnInit() {
-    this.images$ = this.imageService.getImages();
+  addImage(src: string): void {
+    this.setState({ ...this.state, images: [...this.state.images, {src: src}]});
   }
 
 
@@ -63,10 +53,8 @@ export class NewAdditionsComponent implements OnInit {
     }
   ];
 
+}
 
-  private getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
-  }
+export class ImageState {
+  images: {src: string}[] = [];
 }

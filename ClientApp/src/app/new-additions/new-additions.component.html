@@ -1,8 +1,8 @@
-  <!--<div class="d-flex justify-content-center flex-wrap">-->
-<!--<div class="d-flex justify-content-start flex-wrap flex-grow-1">-->
+
+  <button type="button" class="btn" (click)="addImage()">Add image</button>
 <div class="d-flex justify-content-start flex-wrap mt-2 mx-2">
-  <div *ngFor="let i of images$ | async" class="overlay view m-1  z-depth-2 flex-basis-12">
-    <img [src]="i.img" class="img-fluid" />
+  <div *ngFor="let i of (images$ | async).images" class="overlay view m-1  z-depth-2 flex-basis-12">
+    <img [src]="i.src" class="img-fluid" />
     <a><div class="mask waves-effect rgba-fade"></div></a>
   </div>
 </div>

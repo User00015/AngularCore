@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using System.Collections;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Identity;
 
 namespace AngularCore.Entities
 {
@@ -6,6 +8,6 @@ namespace AngularCore.Entities
     {
         public byte[] PasswordSalt { get; set; }
         public new byte[] PasswordHash { get; set; }
-
+        public string Role { get; set; }
     }
 }

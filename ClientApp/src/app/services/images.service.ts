@@ -14,7 +14,7 @@ export class ImagesService {
     return this.imageStore.state$;
   }
 
-  addImage(src: string): void {
+  addImage(src: any): void {
     this.imageStore.addImage(src);
   }
 }

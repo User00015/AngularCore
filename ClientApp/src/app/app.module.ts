@@ -1,4 +1,5 @@
 import { BrowserModule } from "@angular/platform-browser";
+import { FormsModule } from "@angular/forms";
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
@@ -13,6 +14,7 @@ import { UsersListComponent } from "./users-list/users-list.component";
 import { NewAdditionsComponent } from "./new-additions/new-additions.component";
 import { RouterLinksComponent } from "./router-links/router-links.component";
 import { ImageStore } from "./store/images.store";
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -25,10 +27,12 @@ import { ImageStore } from "./store/images.store";
     UserComponent,
     UsersListComponent,
     NewAdditionsComponent,
-    RouterLinksComponent
+    RouterLinksComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule,
     MDBBootstrapModule.forRoot()

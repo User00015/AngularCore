@@ -8,10 +8,19 @@ import { Component, OnInit, Input } from '@angular/core';
 export class RouterLinksComponent implements OnInit {
 
   constructor() { }
+  private loggedIn = false;
 
   ngOnInit() {
+
   }
   public links = ["Home", "Users", "Test"];
 
+  private login() {
+    this.loggedIn = !this.loggedIn;
 
+  }
+
+  private logout() {
+    this.loggedIn = !this.loggedIn;
+  }
 }

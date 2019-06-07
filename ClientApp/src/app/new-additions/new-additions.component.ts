@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ImagesService } from "../services/images.service";
-import { BehaviorSubject, Observable } from "rxjs";
-import { tap, map } from "rxjs/operators";
-
+import { ImagesService } from "../core/services/images.service";
+import { Observable } from "rxjs";
 
 @Component({
   selector: 'app-new-additions',

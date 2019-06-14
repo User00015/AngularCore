@@ -47,7 +47,7 @@ namespace AngularCore.Controllers
             {
                 Subject = new ClaimsIdentity(new[]
                 {
-                    new Claim(ClaimTypes.Name, user.Id.ToString()),
+                    new Claim(ClaimTypes.Name, user.Id),
                     new Claim(ClaimTypes.Role, user.Role), 
                     new Claim(ClaimTypes.Email, user.Email)
                 }),

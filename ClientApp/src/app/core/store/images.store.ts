@@ -8,12 +8,12 @@ export class ImageStore extends Store<ImageState> {
     super(new ImageState());
   }
 
-  addImage(src: string): void {
-    this.setState({ ...this.state, images: [...this.state.images, {src: src}]});
+  addImage(url: string): void {
+    this.setState({ ...this.state, source: [...this.state.source, {url: url}]});
   }
 
 }
 
 export class ImageState {
-  images: {src: string}[] = [];
+  source: {url: string}[] = [];
 }

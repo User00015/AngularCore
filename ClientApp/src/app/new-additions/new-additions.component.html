@@ -1,8 +1,8 @@
-
-  <button type="button" class="btn" (click)="addImage()">Add image</button>
+  <button type="button" mdbBtn color="purple" mdbWavesEffect (click)="addImage()">Add Image</button>
 <div class="d-flex justify-content-start flex-wrap mt-2 mx-2">
-  <div *ngFor="let i of (images$ | async).images" class="overlay view m-1  z-depth-2 flex-basis-12">
-    <img [src]="i.src" class="img-fluid" />
-    <a><div class="mask waves-effect rgba-fade"></div></a>
+  <div *ngFor="let i of (images$ | async).source" class="overlay view m-1  z-depth-2 flex-basis-12">
+    <img [src]="i.url" class="img-fluid" />
+    <a><div class="mask waves-effect rgba-fade" (click)="imageClicked(i)"></div></a>
   </div>
 </div>
+

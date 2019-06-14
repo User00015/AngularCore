@@ -1,6 +1,8 @@
 import { BrowserModule } from "@angular/platform-browser";
+import { FormsModule } from "@angular/forms";
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
-import { HttpClientModule } from "@angular/common/http";
+import { JwtInterceptor } from "./core/interceptors/JwtInterceptor";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { TestComponent } from "./test/test.component";
@@ -12,7 +14,9 @@ import { UserComponent } from "./user/user.component";
 import { UsersListComponent } from "./users-list/users-list.component";
 import { NewAdditionsComponent } from "./new-additions/new-additions.component";
 import { RouterLinksComponent } from "./router-links/router-links.component";
-import { ImageStore } from "./store/images.store";
+import { ImageStore } from "./core/store/images.store";
+import { UserStore } from "./core/store/user.store";
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -25,15 +29,19 @@ import { ImageStore } from "./store/images.store";
     UserComponent,
     UsersListComponent,
     NewAdditionsComponent,
-    RouterLinksComponent
+    RouterLinksComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule,
     MDBBootstrapModule.forRoot()
   ],
-  providers: [ImageStore],
+  providers: [ImageStore, UserStore,
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi:true}
+  ],
   schemas: [NO_ERRORS_SCHEMA],
   bootstrap: [AppComponent]
 })

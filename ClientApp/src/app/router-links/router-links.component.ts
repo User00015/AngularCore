@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { LoginService } from "../core/services/login.service";
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'router-links',
@@ -7,11 +9,18 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class RouterLinksComponent implements OnInit {
 
-  constructor() { }
+  constructor(private loginService: LoginService) { }
+
+  private loggedIn:Observable<any>; 
 
   ngOnInit() {
+    this.loggedIn = this.loginService.currentUser;
   }
-  public links = ["Home", "Users", "Test"];
 
+  logout() {
+    this.loginService.logout();
+  }
+
+  public links = ["Home", "Users", "Test"];
 
 }

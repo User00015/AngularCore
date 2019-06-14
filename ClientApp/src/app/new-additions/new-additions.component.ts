@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ImagesService } from "../services/images.service";
+import { ImagesService } from "../core/services/images.service";
 import { BehaviorSubject, Observable } from "rxjs";
 import { tap, map } from "rxjs/operators";
 
@@ -21,7 +21,7 @@ export class NewAdditionsComponent implements OnInit {
 
   ngOnInit() {
     this.images$ = this.imageService.getImages();
-    this.images.forEach(i => this.imageService.addImage(i.img));
+    //this.images.forEach(i => this.imageService.addImage(i.img));
   }
 
 

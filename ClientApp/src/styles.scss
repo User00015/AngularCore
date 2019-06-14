@@ -3,6 +3,18 @@
   background-color: transparent; //Override white color by default
 }
 
+body {
+  background: #ECEFF1
+}
+
+.nav-item.active {
+  background:rgba(255, 255, 255, .2);
+}
+
+.waves-effect, .nav-item.active {
+  border-radius: .25rem;
+}
+
 .flex-basis-10 {
   flex-basis: 10%
 }

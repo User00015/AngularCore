@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ImagesService } from "../core/services/images.service";
-import { BehaviorSubject, Observable } from "rxjs";
-import { tap, map } from "rxjs/operators";
-
+import { Observable } from "rxjs";
 
 @Component({
   selector: 'app-new-additions',
@@ -16,7 +14,7 @@ export class NewAdditionsComponent implements OnInit {
 
   addImage() {
     var randomInt = this.getRandomInt(0, 9);
-    this.imageService.addImage(this.images[randomInt].img);
+    this.imageService.addImage(this.images[randomInt]);
   }
 
   ngOnInit() {
@@ -24,43 +22,56 @@ export class NewAdditionsComponent implements OnInit {
     //this.images.forEach(i => this.imageService.addImage(i.img));
   }
 
+  imageClicked(image) {
+    console.log(image);
+  }
+
 
   private images = [
     {
       img: "https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(145).jpg", thumb:
-        "https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(145).jpg", description: "Image 1"
+        "https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(145).jpg", description: "Image 1",
+      user: 1
     },
     {
       img: "https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(150).jpg", thumb:
-        "https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(150).jpg", description: "Image 2"
+        "https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(150).jpg", description: "Image 2",
+      user: 1
     },
     {
       img: "https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(152).jpg", thumb:
-        "https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(152).jpg", description: "Image 3"
+        "https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(152).jpg", description: "Image 3",
+      user: 1
     },
     {
       img: "https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(42).jpg", thumb:
-        "https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(42).jpg", description: "Image 4"
+        "https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(42).jpg", description: "Image 4",
+      user: 1
     },
     {
       img: "https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(151).jpg", thumb:
-        "https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(151).jpg", description: "Image 5"
+        "https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(151).jpg", description: "Image 5",
+      user: 1
     },
     {
       img: "https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(40).jpg", thumb:
-        "https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(40).jpg", description: "Image 6"
+        "https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(40).jpg", description: "Image 6",
+      user: 5
     },
     {
       img: "https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(148).jpg", thumb:
-        "https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(148).jpg", description: "Image 7"
+        "https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(148).jpg", description: "Image 7",
+      user: 5
     },
     {
       img: "https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(147).jpg", thumb:
-        "https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(147).jpg", description: "Image 8"
+        "https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(147).jpg", description: "Image 8",
+      user: 10
     },
     {
       img: "https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(149).jpg", thumb:
-        "https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(149).jpg", description: "Image 9"
+        "https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(149).jpg", description: "Image 9",
+      user: 10
     }
   ];
 

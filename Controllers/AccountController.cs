@@ -49,7 +49,8 @@ namespace AngularCore.Controllers
                 {
                     new Claim(ClaimTypes.Name, user.Id),
                     new Claim(ClaimTypes.Role, user.Role), 
-                    new Claim(ClaimTypes.Email, user.Email)
+                    new Claim(ClaimTypes.Email, user.Email),
+                    new Claim("username", user.UserName)
                 }),
                 Expires = DateTime.UtcNow.AddDays(7),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
